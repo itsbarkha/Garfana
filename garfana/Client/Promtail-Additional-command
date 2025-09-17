@@ -1,0 +1,300 @@
+ wget https://github.com/grafana/loki/releases/download/v3.5.5/promtail-linux-arm64.zip
+   40  ls
+   41  ll
+   42  apt-get update
+   43  apt-get install zip unzip 
+   44  ll
+   45  unzip promtail-linux-arm64.zip 
+   46  ll
+   47  wget https://raw.githubusercontent.com/grafana/loki/main/clients/cmd/promtail/promtail-local-config.yaml 
+   48  ll
+   49  vim promtail-local-config.yaml 
+   50  telnet 172.31.10.230 3100
+   51  vim promtail-local-config.yaml 
+   52  netstat -nlpt
+   53  apt install net-tools
+   54  netstat -nlpt
+   55  ./promtail-linux-arm64 -config.file=promtail-local-config.yaml 
+   56  ll
+   57  ./promtail-linux-arm64 -config.file=promtail-local-config.yaml 
+   58  uname -m
+   59  chmod +x promtail-linux-amd64
+   60  lsb_release -a
+   61  cat /etc/os-release 
+   62  chmod +x promtail-linux-amd64
+   63  chmod +x promtail-linux-arm64
+   64  ll
+   65  ./promtail-linux-arm64 -config.file=promtail-local-config.yaml
+   66  sudo ./promtail-linux-arm64 -config.file=promtail-local-config.yaml
+   67  ll
+   68  mkdir promtail
+   69  cd promtail
+   70  ll
+   71  wget https://github.com/grafana/loki/releases/latest/download/promtail-linux-amd64.zip
+   72  ll
+   73  unzip promtail-linux-amd64.zip
+   74  chmod -x promtail-linux-amd64
+   75  ll
+   76  chmod +x promtail-linux-amd64
+   77  ll
+   78  ./promtail-linux-amd64 --version
+   79  ./promtail-linux-amd64 -config.file=../promtail-local-config.yaml 
+   80  sudo apt install screen
+   81  screen --version
+   82  screen -S promtail
+   83  netstat -nlpt
+   84  screen -ls
+   85  screen -r
+   86  netstat -nlpt
+   87  cd ..
+   88  ll
+   89  wget https://github.com/prometheus/prometheus/releases/latest/download/prometheus-linux-amd64.tar.gz
+   90  tar xvf prometheus-linux-amd64.tar.gz
+   91  cd prometheus-*/
+   92  wget https://github.com/prometheus/prometheus/releases/latest/download/prometheus-linux-amd64.tar.gz
+   93  wget https://github.com/prometheus/prometheus/releases/download/v3.5.0/prometheus-3.5.0.linux-amd64.tar.gz
+   94  ls
+   95  ll
+   96  tar xvf prometheus-3.5.0.linux-amd64.tar.gz 
+   97  ll
+   98  cd prometheus-3.5.0.linux-amd64
+   99  ll
+  100  vim prometheus.yml
+  101  mv prometheus.yml prometheus.yml_old
+  102  vim prometheus.yml
+  103  wget https://github.com/prometheus/node_exporter/releases/latest/download/node_exporter-linux-amd64.tar.gz
+  104  wget https://github.com/prometheus/node_exporter/releases/download/v1.9.1/node_exporter-1.9.1.linux-amd64.tar.gz
+  105  tar xvf node_exporter-1.9.1.linux-amd64.tar.gz 
+  106  ll
+  107  mv node_exporter-1.9.1.linux-amd64/ node_exporter
+  108  cd node_exporter
+  109  ls
+  110  ll
+  111  ./node_exporter &
+  112  cd ..
+  113  ll
+  114  ./prometheus --config.file=prometheus.yml &
+  115  netstat -nlpt
+  116  ls
+  117  cd /opt/
+  118  ls
+  119  cd
+  120  cd /opt/promtail
+  121  ll
+  122  history | grep promtail
+  123  cd /opt/
+  124  ls
+  125  cat promtail-local-config.yaml 
+  126  curl http://172.31.10.230:3100/loki/api/v1/push
+  127  curl -I  http://172.31.10.230:3100/loki/api/v1/push
+  128  curl http://172.31.10.230:3100/ready
+  129  curl http://172.31.10.230:3100/metrics
+  130  curl -G -s "http://172.31.10.230:3100/loki/api/v1/query"      --data-urlencode 'query={job="syslog"}'
+  131  curl http://172.31.10.230:3100/metrics | head -20
+  132  curl http://localhost:9080/metrics | head -20
+  133  cd
+  134  cd /opt/promtail
+  135  ll
+  136  history | grep promtail
+  137  cd ..
+  138  ll
+  139  cat promtail-local-config.yaml
+  140  history 
+  141  cd /opt/
+  142  ls
+  143  cat promtail-local-config.yaml 
+  144  cp -rf promtail-local-config.yaml promtail-local-config.yaml_backup 
+  145  >promtail-local-config.yaml
+  146  vi promtail-local-config.yaml
+  147  lsof -i 9080
+  148  netstat -tpln
+  149  kill -9 3725
+  150  ls
+  151  cd promtail
+  152  ls
+  153  ./promtail-linux-amd64 -config.file=../promtail-local-config.yaml
+  154  ip a
+  155  netstat -tpln
+  156  ./promtail-linux-amd64 -config.file=../promtail-local-config.yaml &
+  157  netstat -tpln
+  158  ./promtail-linux-amd64 -config.file=../promtail-local-config.yaml &
+  159  netstat -tpln
+  160  ls
+  161  cd ..
+  162  ls
+  163  cd promtail
+  164  ls
+  165  netstat -tpln
+  166  kill -9 13169
+  167  ./promtail-linux-amd64 -config.file=../promtail-local-config.yaml &
+  168  netstat -tpln
+  169  ls
+  170  cd ..
+  171  ls
+  172  cat promtail-local-config.yaml
+  173  ip a
+  174  curl http://172.31.10.230:3100/ready
+  175  cd
+  176  docker ps
+  177  netstat -nlpt
+  178  curl -I http://13.126.234.60:4318/
+  179  curl -I http://13.126.234.60:4317
+  180  curl -I http://13.126.234.60:4318
+  181  cat /etc/os-release 
+  182  cd 
+  183  ls
+  184  wget https://github.com/open-telemetry/opentelemetry-collector-releases/releases/download/v0.111.0/otelcol_0.111.0_linux_amd64.tar.gz
+  185  tar -xvzf otelcol_0.111.0_linux_amd64.tar.gz
+  186  sudo mv otelcol /usr/local/bin/
+  187  otelcol --version
+  188  vi /etc/otel-collector/config.yaml
+  189  sudo mkdir -p /etc/otel-collector
+  190  sudo nano /etc/otel-collector/config.yaml
+  191  vi /etc/systemd/system/otel-collector.service
+  192  sudo systemctl daemon-reload
+  193  sudo systemctl enable otel-collector
+  194  sudo systemctl start otel-collector
+  195  sudo systemctl status otel-collector
+  196  php -v
+  197  cd /var/www/html/
+  198  ls 
+  199  cd Event-Planner-PHP-Project/
+  200  ls
+  201  sudo apt install php libapache2-mod-php php-mysql
+  202  sudo apt install php-gd php-curl php-mbstring
+  203  vi info.php
+  204  cat /etc/apache2/sites-enabled/php.conf 
+  205  sudo tail -n 50 /var/log/apache2/error.log
+  206  ls -l /var/www/html/Event-Planner-PHP-Project/utils/styles.phpls -l /var/www/html/Event-Planner-PHP-Project/utils/styles.php
+  207  ls -l /var/www/html/Event-Planner-PHP-Project/utils/styles.php
+  208  ls
+  209  ll
+  210  sudo chown -R www-data:www-data /var/www/html/Event-Planner-PHP-Project
+  211  sudo chmod -R 755 /var/www/html/Event-Planner-PHP-Project
+  212  ls -larth
+  213  cat index.php 
+  214  head -n 30 index.php
+  215  find . -type d -name utils
+  216  vi index.php 
+  217  cp -ef index.php index.php_backup
+  218  cp -rf index.php index.php_backup
+  219  vi index.php 
+  220  php -v
+  221  sudo apt install -y php-dev php-pear git build-essential
+  222  cd 
+  223  ls
+  224  git clone https://github.com/open-telemetry/opentelemetry-php-instrumentation.git
+  225  ls
+  226  cd opentelemetry-php-instrumentation/ext/opentelemetry
+  227  cd opentelemetry-php-instrumentation
+  228  l
+  229  ls
+  230  cd ext/
+  231  ls
+  232  phpize
+  233  ./configure
+  234  make
+  235  sudo make install
+  236  echo "extension=opentelemetry.so" | sudo tee /etc/php/*/mods-available/opentelemetry.ini
+  237  echo "extension=opentelemetry.so" | sudo tee /etc/php/8.3/cli/conf.d/20-opentelemetry.ini
+  238  sudo systemctl restart apache2
+  239  php -m | grep opentelemetry
+  240  sudo nano /etc/apache2/envvars
+  241  sudo systemctl restart apache2
+  242  telnet 13.126.234.60 4318
+  243  sudo nano /etc/apache2/envvars
+  244  telnet 13.126.234.60 4318
+  245  cd 
+  246  ls
+  247  cd opentelemetry-php-instrumentation/
+  248  ls
+  249  cd ext/
+  250  ls
+  251  sudo nano /etc/apache2/envvars
+  252  telnet 13.126.234.60 4318
+  253  sudo cat /etc/apache2/envvars
+  254  sudo systemctl restart apache2
+  255  sudo systemctl show apache2 | grep Environment
+  256  cd /etc/apache2/sites-enabled/
+  257  vi php.conf 
+  258  sudo systemctl restart apache2
+  259  sudo systemctl show apache2 | grep Environment
+  260  php -i | grep "Loaded Configuration File"
+  261  vi /etc/php/8.3/cli/php.ini
+  262  sudo systemctl restart apache2
+  263  sudo nano /var/www/html/Event-Planner-PHP-Project/otel-test.php
+  264  sudo nano /var/www/html/Event-Planner-PHP-Project/otel-test-trace.php
+  265  cd /var/www/html/Event-Planner-PHP-Project/
+  266  php otel-test-trace.php
+  267  ls
+  268  curl -L -o opentelemetry.phar https://github.com/open-telemetry/opentelemetry-php/releases/latest/download/opentelemetry.phar
+  269  ls
+  270  vi otel-test-trace.php 
+  271  php otel-test-trace.php
+  272  >opentelemetry.phar 
+  273  vi opentelemetry.phar 
+  274  cat opentelemetry.phar 
+  275  rm -rf opentelemetry.phar 
+  276  curl -L -o opentelemetry.phar https://github.com/open-telemetry/opentelemetry-php/releases/latest/download/opentelemetry.phar
+  277  >otel-test-trace.php 
+  278  vi otel-test-trace.php 
+  279  php otel-test-trace.php
+  280  root@ip-172-31-37-4:/var/www/html/Event-Planner-PHP-Project# php otel-test-trace.php
+  281  Not FoundPHP Fatal error:  Uncaught Error: Class "OpenTelemetry\Exporter\OTLP\OtlpHttpExporter" not found in /var/www/html/Event-Planner-PHP-Project/otel-test-trace.php:9
+  282  Stack trace:
+  283  ls -l opentelemetry.phar
+  284  >otel-test-trace.php 
+  285  vi otel-test-trace.php 
+  286  php otel-test-trace.php
+  287  pwd
+  288  cd 
+  289  ls
+  290  cd /var/www/html/Event-Planner-PHP-Project
+  291  cat otel-test-trace.php 
+  292  >otel-test-trace.php 
+  293  vi otel-test-trace.php 
+  294  php otel-test-trace.php
+  295  >otel-test-trace.php 
+  296  vi otel-test-trace.php 
+  297  php otel-test-trace.php
+  298  telnet 13.126.234.60 4318
+  299  docker exec -it tempo netstat -tpln
+  300  curl http://13.126.234.60:4318/v1/traces
+  301  vi /etc/php/8.3/cli/php.ini 
+  302  export OTEL_SERVICE_NAME=Event-Planner
+  303  export OTEL_EXPORTER_OTLP_ENDPOINT=http://13.126.234.60:4318
+  304  export OTEL_TRACES_EXPORTER=otlp
+  305  php otel-test-trace.php
+  306  curl http://13.126.234.60:4318/v1/traces
+  307  curl -X POST http://13.126.234.60:4318/v1/traces      -H "Content-Type: application/json"      -d '{"resourceSpans":[...your trace data...]}'
+  308  vi otel-test-trace.php 
+  309  cat otel-test-trace.php 
+  310  php otel-test-trace.php
+  311  >otel-test-trace.php 
+  312  vi otel-test-trace.php 
+  313  php otel-test-trace.php
+  314  cd /var/www/html/Event-Planner-PHP-Project/
+  315  php otel-test-trace.php
+  316  cd /var/www/html/Event-Planner-PHP-Project/
+  317  php otel-test-trace.php
+  318  ls
+  319  ./promtail-linux-amd64 -config.file=../promtail-local-config.yaml 
+  320  netstat -nlpt
+  321  kill -9 3510
+  322  netstat -nlpt
+  323  ./promtail-linux-amd64 -config.file=../promtail-local-config.yaml 
+  324  netstat -nlpt
+  325  kill -9 3718
+  326  ./promtail-linux-amd64 -config.file=../promtail-local-config.yaml 
+  327  cd /var/www/html/Event-Planner-PHP-Project/
+  328  php otel-test-trace.php
+  329  cd 
+  330  ls
+  331  cd opentelemetry-php-instrumentation/
+  332  ls
+  333  vi /etc/php/8.3/cli/php.ini 
+  334  history
+  335  ls
+  336  cd /opt/promtail
+  337  ls
+

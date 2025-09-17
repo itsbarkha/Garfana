@@ -1,0 +1,6 @@
+/etc/php/8.3/cli/php.ini
+
+; OpenTelemetry configuration
+env[OTEL_SERVICE_NAME] = Event-Planner
+env[OTEL_EXPORTER_OTLP_ENDPOINT] = http://13.126.234.60:4318
+env[OTEL_TRACES_EXPORTER] = otlp
